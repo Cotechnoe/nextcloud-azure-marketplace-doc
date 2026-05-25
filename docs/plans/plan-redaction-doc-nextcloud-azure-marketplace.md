@@ -49,6 +49,10 @@ nextcloud-azure-marketplace-doc/
 ├── Makefile                         # Automatisation (lint, preview, sync)
 ├── .gitignore
 ├── docs/
+│   ├── adr/                         # Architecture Decision Records du projet doc
+│   │   ├── TAXONOMY.md              # Taxonomie des ADRs
+│   │   ├── README.md                # Index des ADRs
+│   │   └── 8xx-BIZ-*.md            # ADRs métier (stratégie, sources, marque)
 │   ├── plans/
 │   │   └── plan-redaction-doc-nextcloud-azure-marketplace.md   # ce fichier
 │   ├── vm-sizing-guide.md           # Tableau SKU Azure vs charge Nextcloud
@@ -102,9 +106,10 @@ Ordre de rédaction = ordre du parcours utilisateur.
 | 2.4 | `Post-Deployment-Verification` | `Post-Deployment-Verification-fr` | 🔴 Critique | Modéré | Vérifier nginx, PHP-FPM, MariaDB, Redis ; accès HTTPS ; status `occ` |
 | 2.5 | `HTTPS-TLS-Certificate` | `HTTPS-TLS-Certificate-fr` | 🔴 Critique | Modéré | Certificat Let's Encrypt auto, renouvellement certbot, cert personnalisé |
 | 2.6 | `Configuring-Nextcloud` | `Configuring-Nextcloud-fr` | 🔴 Critique | Majeur | Wizard first-boot vs `occ maintenance:install`, admin, domaine de confiance, stockage |
+| 2.7 | `Updating-Nextcloud` | `Updating-Nextcloud-fr` | 🔴 Critique | Modéré | Canal `stable`/`maintenance`, commande `occ upgrade`, Nextcloud Updater web — **l'Updater ne peut pas être désactivé** (condition de conformité marque, §5.4) |
 
 **Dépendances :** Phase 1 (README doit être publié en premier).  
-**Critère de complétion :** Un utilisateur peut déployer Nextcloud depuis zéro et accéder à l'interface HTTPS.
+**Critère de complétion :** Un utilisateur peut déployer Nextcloud depuis zéro, accéder à l'interface HTTPS et appliquer une mise à jour.
 
 ---
 
@@ -118,9 +123,11 @@ au quotidien.
 | 3.2 | `Loading-Sample-Data` | `Loading-Sample-Data-fr` | 🟡 Important | Mineur | Upload fichiers d'exemple, partage, lien public — valide le déploiement |
 | 3.3 | `Troubleshooting` | `Troubleshooting-fr` | 🟡 Important | Majeur | Top 10 problèmes post-déploiement : port 443, cert expiré, DB connexion, PHP-FPM |
 | 3.4 | `Support` | `Support-fr` | 🟡 Important | Mineur | Issues GitHub, forum Nextcloud, support Azure, contact Cotechnoe |
+| 3.5 | `Managing-Users` | `Managing-Users-fr` | 🟡 Important | Modéré | Création/suppression de comptes, groupes, quotas, import CSV, réinitialisation mot de passe — cas d'usage université et centre de recherche |
+| 3.6 | `Managing-Apps` | `Managing-Apps-fr` | 🟢 Utile | Mineur | Activer/désactiver des apps depuis l'app store officiel Nextcloud — rappel : apps hors app store interdites (§5.4) |
 
 **Dépendances :** Phase 2 complétée.  
-**Critère de complétion :** L'utilisateur peut utiliser Nextcloud de façon autonome et trouver de l'aide.
+**Critère de complétion :** L'utilisateur peut administrer les comptes et les applications, et trouver de l'aide.
 
 ---
 
@@ -135,9 +142,10 @@ intégrations avancées. Moins urgents pour la certification initiale.
 | 4.3 | `docs/backup-restore.md` | EN+FR | 🟡 Important | Majeur | Sauvegarde des données (`/var/www/nextcloud/data`), dump MariaDB, Azure Backup |
 | 4.4 | `docs/entra-id-sso.md` | EN+FR | 🟢 Utile | Majeur | Intégration SSO Entra ID (SAML 2.0 / OIDC) — app `user_saml` + configuration Nextcloud |
 | 4.5 | `docs/monitoring.md` | EN+FR | 🟢 Utile | Modéré | Azure Monitor, alertes CPU/disk, logs nginx/PHP-FPM, intégration Prometheus |
+| 4.6 | `docs/network-security.md` | EN+FR | 🟡 Important | Modéré | Règles NSG Azure (ports 22/80/443 uniquement), fail2ban, désactivation des ports inutilisés, renforcement SSH — recommandations OWASP A05 |
 
 **Dépendances :** Phase 2 et 3 doivent être publiées.  
-**Critère de complétion :** Couverture complète des scénarios d'administration avancés.
+**Critère de complétion :** Couverture complète des scénarios d'administration avancés, incluant la sécurité réseau.
 
 ---
 
@@ -164,11 +172,11 @@ lancement (Go Live).
 | Phase | Livrables EN | Livrables FR | Priorité max | Effort total estimé |
 |-------|:-----------:|:-----------:|:------------:|:--------------------|
 | 1 — Fondations | 4 | 1 | 🔴 Critique | ~4 h |
-| 2 — Wiki essentielles | 6 pages | 6 pages | 🔴 Critique | ~12 h |
-| 3 — Wiki courante | 4 pages | 4 pages | 🟡 Important | ~8 h |
-| 4 — Guides techniques | 5 docs | 5 docs | 🟡 Important | ~14 h |
+| 2 — Wiki essentielles | 7 pages | 7 pages | 🔴 Critique | ~15 h |
+| 3 — Wiki courante | 6 pages | 6 pages | 🟡 Important | ~12 h |
+| 4 — Guides techniques | 6 docs | 6 docs | 🟡 Important | ~17 h |
 | 5 — Assets Marketplace | 6 | — | 🔴 Critique | ~5 h |
-| **Total** | **25** | **16** | — | **~43 h** |
+| **Total** | **29** | **20** | — | **~53 h** |
 
 ---
 
@@ -249,6 +257,14 @@ Documenter dans `vm-sizing-guide.md` :
 - Disque de données séparé recommandé (Azure Data Disk) vs disque OS.
 - Chemin par défaut : `/var/www/nextcloud/data/`.
 - Commande pour déplacer le dossier de données (`occ config:system:set datadirectory`).
+
+### 5.8 TLS et nom de domaine
+Let's Encrypt (Certbot) requiert un **FQDN (nom de domaine pleinement qualifié)** pointant vers l'IP publique de la VM. Un déploiement avec IP seule ne peut pas obtenir de certificat automatique.
+Documenter dans `HTTPS-TLS-Certificate` :
+- **Prérequis DNS** : enregistrement A `nextcloud.mondomaine.ca → IP publique VM` avant de lancer Certbot.
+- **Option sans domaine** : certificat auto-signé — avertissement navigateur attendu, à déconseiller en production.
+- **IP statique Azure** : recommander une IP publique statique (Azure Public IP — Static SKU) plutôt qu'une IP dynamique susceptible de changer au redémarrage.
+- **Domaines de confiance Nextcloud** (`occ config:system:set trusted_domains`) : à synchroniser avec le FQDN utilisé.
 
 ---
 
