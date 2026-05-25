@@ -86,8 +86,18 @@ dans Partner Center.
 | 1.5 | `PRIVACY.md` | EN | 🟡 Important | Modéré | Données collectées par la VM, politique de rétention, contact DPO |
 | 1.6 | `Makefile` | — | 🟢 Utile | Modéré | Cibles : `lint`, `preview`, `check-links`, `sync-fr` |
 
-**Dépendances :** Aucune — peut démarrer immédiatement.  
-**Critère de complétion :** Le dépôt est listable sur GitHub avec un README clair ; Partner Center peut y être référencé.
+**Dépendances :** Aucune — peut démarrer immédiatement.
+
+**Critères de complétion :**
+
+| # | Critère | Comment vérifier |
+|---|---------|------------------|
+| C1.1 | `README.md` publié avec badge Marketplace et tableau de navigation | Badge visible sur GitHub |
+| C1.2 | `README-fr.md` synchronisé avec `README.md` | Contenu équivalent EN/FR |
+| C1.3 | `NOTICE.md` mentionne Nextcloud GmbH et la licence AGPL-3.0 | Revue textuelle |
+| C1.4 | `LICENSE.md` spécifie CC BY 4.0 pour la documentation | Revue textuelle |
+| C1.5 | `PRIVACY.md` couvre les données collectées par la VM (hors données Nextcloud utilisateurs) | Revue portée |
+| C1.6 | URL du dépôt public répond HTTP 200 — référençable dans Partner Center | `curl -I <url>` |
 
 ---
 
@@ -108,8 +118,18 @@ Ordre de rédaction = ordre du parcours utilisateur.
 | 2.6 | `Configuring-Nextcloud` | `Configuring-Nextcloud-fr` | 🔴 Critique | Majeur | Wizard first-boot vs `occ maintenance:install`, admin, domaine de confiance, stockage |
 | 2.7 | `Updating-Nextcloud` | `Updating-Nextcloud-fr` | 🔴 Critique | Modéré | Canal `stable`/`maintenance`, commande `occ upgrade`, Nextcloud Updater web — **l'Updater ne peut pas être désactivé** (condition de conformité marque, §5.4) |
 
-**Dépendances :** Phase 1 (README doit être publié en premier).  
-**Critère de complétion :** Un utilisateur peut déployer Nextcloud depuis zéro, accéder à l'interface HTTPS et appliquer une mise à jour.
+**Dépendances :** Phase 1 (README doit être publié en premier).
+
+**Critères de complétion :**
+
+| # | Critère | Comment vérifier |
+|---|---------|------------------|
+| C2.1 | 7 pages wiki EN publiées (2.1–2.7) | Pages visibles dans GitHub Wiki |
+| C2.2 | 7 pages wiki FR publiées, synchronisées avec leur version EN | Idem |
+| C2.3 | Un utilisateur sans expérience peut déployer la VM en suivant 2.2 → 2.3 → 2.4 | Test parcours utilisateur |
+| C2.4 | Accès HTTPS documenté avec Let's Encrypt et option certificat personnalisé (2.5) | Revue contenu |
+| C2.5 | Procédure de mise à jour présente avec canal `stable`/`maintenance` et commande `occ upgrade` (2.7) | Revue contenu |
+| C2.6 | Aucune page ne présente l'Updater comme désactivable (conformité marque §5.4) | Grep + revue ADR 803 |
 
 ---
 
@@ -126,8 +146,18 @@ au quotidien.
 | 3.5 | `Managing-Users` | `Managing-Users-fr` | 🟡 Important | Modéré | Création/suppression de comptes, groupes, quotas, import CSV, réinitialisation mot de passe — cas d'usage université et centre de recherche |
 | 3.6 | `Managing-Apps` | `Managing-Apps-fr` | 🟢 Utile | Mineur | Activer/désactiver des apps depuis l'app store officiel Nextcloud — rappel : apps hors app store interdites (§5.4) |
 
-**Dépendances :** Phase 2 complétée.  
-**Critère de complétion :** L'utilisateur peut administrer les comptes et les applications, et trouver de l'aide.
+**Dépendances :** Phase 2 complétée.
+
+**Critères de complétion :**
+
+| # | Critère | Comment vérifier |
+|---|---------|------------------|
+| C3.1 | 6 pages wiki EN publiées (3.1–3.6) | Pages visibles dans GitHub Wiki |
+| C3.2 | 6 pages wiki FR publiées, synchronisées avec leur version EN | Idem |
+| C3.3 | `Troubleshooting` couvre ≥ 5 problèmes courants post-déploiement (port 443, cert expiré, DB, PHP-FPM…) (3.3) | Revue contenu |
+| C3.4 | `Managing-Users` documente groupes, quotas et import CSV pour cas d'usage universitaire (3.5) | Revue contenu |
+| C3.5 | `Managing-Apps` rappelle l'obligation d'utiliser l'app store officiel Nextcloud (3.6) | Revue §5.4 |
+| C3.6 | `Support` liste ≥ 3 canaux distincts (GitHub Issues, forum Nextcloud, support Azure) (3.4) | Revue contenu |
 
 ---
 
@@ -144,8 +174,18 @@ intégrations avancées. Moins urgents pour la certification initiale.
 | 4.5 | `docs/monitoring.md` | EN+FR | 🟢 Utile | Modéré | Azure Monitor, alertes CPU/disk, logs nginx/PHP-FPM, intégration Prometheus |
 | 4.6 | `docs/network-security.md` | EN+FR | 🟡 Important | Modéré | Règles NSG Azure (ports 22/80/443 uniquement), fail2ban, désactivation des ports inutilisés, renforcement SSH — recommandations OWASP A05 |
 
-**Dépendances :** Phase 2 et 3 doivent être publiées.  
-**Critère de complétion :** Couverture complète des scénarios d'administration avancés, incluant la sécurité réseau.
+**Dépendances :** Phase 2 et 3 doivent être publiées.
+
+**Critères de complétion :**
+
+| # | Critère | Comment vérifier |
+|---|---------|------------------|
+| C4.1 | 6 guides EN présents dans `docs/` (4.1–4.6) | `ls docs/*.md` |
+| C4.2 | 6 guides FR présents dans `docs/` (`-fr.md`) | `ls docs/*-fr.md` |
+| C4.3 | `vm-sizing-guide` contient un tableau ≥ 3 SKU Azure avec recommandation nb d'utilisateurs (4.1) | Revue contenu |
+| C4.4 | `backup-restore` documente `occ maintenance:mode --on` avant toute sauvegarde (4.3) | Revue contenu |
+| C4.5 | `network-security` couvre les ports NSG (22/80/443), fail2ban et renforcement SSH (4.6) | Revue contenu |
+| C4.6 | Aucun guide ne référence le dépôt privé `nextcloud-marketplace` | `grep -r nextcloud-marketplace docs/` |
 
 ---
 
@@ -162,8 +202,19 @@ lancement (Go Live).
 | 5.5 | Badge Azure Marketplace dans README.md | 🟡 Important | Mineur | Badge officiel GTM Toolkit avec paramètres UTM (ADR 801, Règle 7) |
 | 5.6 | Release Notes (première version) | 🟢 Utile | Mineur | Modèle `vivo-azure-marketplace-docs` : new features, improvements, fixes |
 
-**Dépendances :** Phase 1 complétée ; Phase 2 en cours ou terminée.  
-**Critère de complétion :** Dossier Partner Center complet, apte à la soumission pour certification Microsoft.
+**Dépendances :** Phase 1 complétée ; Phase 2 en cours ou terminée.
+
+**Critères de complétion :**
+
+| # | Critère | Comment vérifier |
+|---|---------|------------------|
+| C5.1 | Description courte ≤ 256 caractères, sans « Nextcloud » comme nom de l'offre (ADR 803) | `wc -m` + revue ADR 803 |
+| C5.2 | Description longue ≤ 3 000 caractères, EN + FR | `wc -m` |
+| C5.3 | Notes de démarrage rapide ≤ 500 caractères | `wc -m` |
+| C5.4 | ≥ 2 screenshots 1280×720 soumis dans Partner Center (5.4) | Partner Center |
+| C5.5 | Badge Azure Marketplace présent dans `README.md` avec paramètres UTM (ADR 801, Règle 7) | Revue README |
+| C5.6 | Titre Partner Center = `Cotechnoe Cloud Hub — Secure File Collaboration on Azure` (ADR 803) | Partner Center |
+| C5.7 | Dossier Partner Center soumis et certification Microsoft initiée | Statut Partner Center |
 
 ---
 
