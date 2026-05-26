@@ -9,8 +9,8 @@ pour explorer ses fonctionnalités, effectuer des démonstrations ou valider vot
 
 ## Prérequis
 
-- Nextcloud est configuré et vous pouvez vous connecter en tant qu'administrateur — voir [[Configuring-Nextcloud-fr]].
-- Vous êtes connecté à la VM via SSH — voir [[SSH-Connection-fr]].
+- Nextcloud est configuré et vous pouvez vous connecter en tant qu'administrateur — voir [[fr_Configuring-Nextcloud]].
+- Vous êtes connecté à la VM via SSH — voir [[fr_SSH-Connection]].
 
 ---
 
@@ -118,6 +118,6 @@ sudo -u www-data php /var/www/nextcloud/occ trashbin:cleanup --all-users
 
 | Étape suivante | Page |
 |----------------|------|
-| Gérer les comptes utilisateurs | [[Managing-Users-fr]] |
-| Gérer les applications installées | [[Managing-Apps-fr]] |
-| Résoudre les problèmes | [[Troubleshooting-fr]] |
+| Gérer les comptes utilisateurs | [[fr_Managing-Users]] |
+| Gérer les applications installées | [[fr_Managing-Apps]] |
+| Résoudre les problèmes | [[fr_Troubleshooting]] |

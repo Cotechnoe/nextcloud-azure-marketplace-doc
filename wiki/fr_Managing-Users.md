@@ -10,7 +10,7 @@ y compris la gestion des groupes, les quotas et l'importation CSV pour le provis
 ## Prérequis
 
 - Vous êtes connecté en tant qu'administrateur.
-- Nextcloud est configuré — voir [[Configuring-Nextcloud-fr]].
+- Nextcloud est configuré — voir [[fr_Configuring-Nextcloud]].
 
 ---
 
@@ -162,6 +162,6 @@ sudo -u www-data php /var/www/nextcloud/occ user:delete jdupont
 
 | Étape suivante | Page |
 |----------------|------|
-| Gérer les applications installées | [[Managing-Apps-fr]] |
-| Résoudre les problèmes | [[Troubleshooting-fr]] |
-| Obtenir de l'aide | [[Support-fr]] |
+| Gérer les applications installées | [[fr_Managing-Apps]] |
+| Résoudre les problèmes | [[fr_Troubleshooting]] |
+| Obtenir de l'aide | [[fr_Support]] |

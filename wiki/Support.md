@@ -1,6 +1,6 @@
 # Support
 
-> 🇫🇷 Cette page est également disponible en français : [[Support-fr]]
+> 🇫🇷 Cette page est également disponible en français : [[fr_Support]]
 
 This page describes the available support channels for the Nextcloud Azure Marketplace
 deployment offered by Cotechnoe.

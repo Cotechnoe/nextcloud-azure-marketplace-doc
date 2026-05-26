@@ -104,5 +104,5 @@ Vous êtes maintenant connecté à la VM et pouvez exécuter des commandes d'adm
 
 | Étape suivante | Page |
 |----------------|------|
-| Vérifier que tous les services sont opérationnels | [[Post-Deployment-Verification-fr]] |
-| Configurer le certificat HTTPS | [[HTTPS-TLS-Certificate-fr]] |
+| Vérifier que tous les services sont opérationnels | [[fr_Post-Deployment-Verification]] |
+| Configurer le certificat HTTPS | [[fr_HTTPS-TLS-Certificate]] |

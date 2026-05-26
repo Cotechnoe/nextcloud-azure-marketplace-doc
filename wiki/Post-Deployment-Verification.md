@@ -1,6 +1,6 @@
 # Post-Deployment Verification
 
-> 🇫🇷 Cette page est également disponible en français : [[Post-Deployment-Verification-fr]]
+> 🇫🇷 Cette page est également disponible en français : [[fr_Post-Deployment-Verification]]
 
 After deploying and connecting via SSH, verify that all four core services are running
 correctly before configuring Nextcloud.

@@ -1,6 +1,6 @@
 # Managing Users
 
-> 🇫🇷 Cette page est également disponible en français : [[Managing-Users-fr]]
+> 🇫🇷 Cette page est également disponible en français : [[fr_Managing-Users]]
 
 This page covers creating, organizing, and managing user accounts in Nextcloud,
 including group management, quotas, and CSV import for bulk provisioning.

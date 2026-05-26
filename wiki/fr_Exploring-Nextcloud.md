@@ -9,7 +9,7 @@ afin de vous aider à exploiter pleinement la plateforme.
 
 ## Prérequis
 
-- Nextcloud est configuré et vous pouvez vous connecter — voir [[Configuring-Nextcloud-fr]].
+- Nextcloud est configuré et vous pouvez vous connecter — voir [[fr_Configuring-Nextcloud]].
 
 ---
 
@@ -107,6 +107,6 @@ Les administrateurs peuvent accéder à des paramètres supplémentaires sous **
 
 | Étape suivante | Page |
 |----------------|------|
-| Charger des données de démonstration | [[Loading-Sample-Data-fr]] |
-| Gérer les comptes utilisateurs | [[Managing-Users-fr]] |
-| Installer et gérer des applications | [[Managing-Apps-fr]] |
+| Charger des données de démonstration | [[fr_Loading-Sample-Data]] |
+| Gérer les comptes utilisateurs | [[fr_Managing-Users]] |
+| Installer et gérer des applications | [[fr_Managing-Apps]] |

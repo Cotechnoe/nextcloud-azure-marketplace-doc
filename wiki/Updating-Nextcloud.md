@@ -1,6 +1,6 @@
 # Updating Nextcloud
 
-> 🇫🇷 Cette page est également disponible en français : [[Updating-Nextcloud-fr]]
+> 🇫🇷 Cette page est également disponible en français : [[fr_Updating-Nextcloud]]
 
 This page explains how to keep your Nextcloud installation up to date using
 the built-in updater and the `occ upgrade` command.

@@ -1,6 +1,6 @@
 # Loading Sample Data
 
-> 🇫🇷 Cette page est également disponible en français : [[Loading-Sample-Data-fr]]
+> 🇫🇷 Cette page est également disponible en français : [[fr_Loading-Sample-Data]]
 
 This page explains how to load sample files and data into Nextcloud to explore its
 features, run demonstrations, or validate your deployment.
