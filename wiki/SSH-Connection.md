@@ -1,6 +1,6 @@
 # SSH Connection
 
-> 🇫🇷 Cette page est également disponible en français : [[fr_SSH-Connection]]
+> 🇫🇷 Cette page est également disponible en français : [[fr-SSH-Connection]]
 
 This page explains how to connect to your Cotechnoe Cloud Hub VM using SSH so you can
 manage the server and run administrative commands.

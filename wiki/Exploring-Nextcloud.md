@@ -1,6 +1,6 @@
 # Exploring Nextcloud
 
-> 🇫🇷 Cette page est également disponible en français : [[fr_Exploring-Nextcloud]]
+> 🇫🇷 Cette page est également disponible en français : [[fr-Exploring-Nextcloud]]
 
 This page gives you an overview of the core features available in your Nextcloud
 deployment so you can get the most out of the platform.

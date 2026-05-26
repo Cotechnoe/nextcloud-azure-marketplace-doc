@@ -77,7 +77,7 @@ Ce que vous vous attendiez à voir se produire.
 Ce qui s'est produit réellement.
 
 ## Journaux pertinents
-(collez la sortie des commandes pertinentes — voir [[fr_Troubleshooting]] pour les commandes de diagnostic)
+(collez la sortie des commandes pertinentes — voir [[fr-Troubleshooting]] pour les commandes de diagnostic)
 ```
 
 ---
@@ -97,7 +97,7 @@ sudo -u www-data php /var/www/nextcloud/occ status
 df -h
 ```
 
-Voir [[fr_Troubleshooting]] pour les procédures de diagnostic détaillées.
+Voir [[fr-Troubleshooting]] pour les procédures de diagnostic détaillées.
 
 ---
 
@@ -105,6 +105,6 @@ Voir [[fr_Troubleshooting]] pour les procédures de diagnostic détaillées.
 
 | Étape suivante | Page |
 |----------------|------|
-| Résoudre les problèmes courants | [[fr_Troubleshooting]] |
-| Explorer Nextcloud | [[fr_Exploring-Nextcloud]] |
-| Retourner à l'accueil du wiki | [[fr_Home]] |
+| Résoudre les problèmes courants | [[fr-Troubleshooting]] |
+| Explorer Nextcloud | [[fr-Exploring-Nextcloud]] |
+| Retourner à l'accueil du wiki | [[fr-Home]] |

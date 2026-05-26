@@ -1,6 +1,6 @@
 # Cotechnoe Cloud Hub — Azure Marketplace Documentation
 
-> 🇫🇷 Cette page est également disponible en français : [[fr_Home]]
+> 🇫🇷 Cette page est également disponible en français : [[fr-Home]]
 
 Welcome to the official documentation for **Cotechnoe Cloud Hub — Secure File Collaboration on Azure**, deployed via the Microsoft Azure Marketplace.
 
@@ -75,19 +75,19 @@ The following pages are also available in French / Les pages suivantes sont éga
 
 | English | Français |
 |---------|----------|
-| [[Home]] | [[fr_Home]] |
-| [[Deploying-from-Marketplace]] | [[fr_Deploying-from-Marketplace]] |
-| [[SSH-Connection]] | [[fr_SSH-Connection]] |
-| [[Post-Deployment-Verification]] | [[fr_Post-Deployment-Verification]] |
-| [[HTTPS-TLS-Certificate]] | [[fr_HTTPS-TLS-Certificate]] |
-| [[Configuring-Nextcloud]] | [[fr_Configuring-Nextcloud]] |
-| [[Updating-Nextcloud]] | [[fr_Updating-Nextcloud]] |
-| [[Managing-Users]] | [[fr_Managing-Users]] |
-| [[Managing-Apps]] | [[fr_Managing-Apps]] |
-| [[Loading-Sample-Data]] | [[fr_Loading-Sample-Data]] |
-| [[Exploring-Nextcloud]] | [[fr_Exploring-Nextcloud]] |
-| [[Troubleshooting]] | [[fr_Troubleshooting]] |
-| [[Support]] | [[fr_Support]] |
+| [[Home]] | [[fr-Home]] |
+| [[Deploying-from-Marketplace]] | [[fr-Deploying-from-Marketplace]] |
+| [[SSH-Connection]] | [[fr-SSH-Connection]] |
+| [[Post-Deployment-Verification]] | [[fr-Post-Deployment-Verification]] |
+| [[HTTPS-TLS-Certificate]] | [[fr-HTTPS-TLS-Certificate]] |
+| [[Configuring-Nextcloud]] | [[fr-Configuring-Nextcloud]] |
+| [[Updating-Nextcloud]] | [[fr-Updating-Nextcloud]] |
+| [[Managing-Users]] | [[fr-Managing-Users]] |
+| [[Managing-Apps]] | [[fr-Managing-Apps]] |
+| [[Loading-Sample-Data]] | [[fr-Loading-Sample-Data]] |
+| [[Exploring-Nextcloud]] | [[fr-Exploring-Nextcloud]] |
+| [[Troubleshooting]] | [[fr-Troubleshooting]] |
+| [[Support]] | [[fr-Support]] |
 
 ## Resources
 

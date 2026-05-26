@@ -1,6 +1,6 @@
 # Deploying from Azure Marketplace
 
-> 🇫🇷 Cette page est également disponible en français : [[fr_Deploying-from-Marketplace]]
+> 🇫🇷 Cette page est également disponible en français : [[fr-Deploying-from-Marketplace]]
 
 This page walks you through deploying the **Cotechnoe Cloud Hub** VM from Azure Marketplace,
 from finding the offer to a running virtual machine in your Azure subscription.

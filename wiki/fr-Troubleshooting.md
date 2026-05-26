@@ -9,7 +9,7 @@ depuis Azure Marketplace, ainsi que les commandes de diagnostic et les solutions
 
 ## Prérequis
 
-- Vous êtes connecté à la VM via SSH — voir [[fr_SSH-Connection]].
+- Vous êtes connecté à la VM via SSH — voir [[fr-SSH-Connection]].
 - Les quatre services devraient être en cours d'exécution : Nginx, PHP-FPM 8.3, PostgreSQL 16, Redis.
 
 ---
@@ -175,6 +175,6 @@ L'absence de sortie indique que tous les fichiers principaux sont intacts.
 
 | Étape suivante | Page |
 |----------------|------|
-| Obtenir de l'aide | [[fr_Support]] |
-| Mettre à jour Nextcloud | [[fr_Updating-Nextcloud]] |
-| Vérifier les services | [[fr_Post-Deployment-Verification]] |
+| Obtenir de l'aide | [[fr-Support]] |
+| Mettre à jour Nextcloud | [[fr-Updating-Nextcloud]] |
+| Vérifier les services | [[fr-Post-Deployment-Verification]] |

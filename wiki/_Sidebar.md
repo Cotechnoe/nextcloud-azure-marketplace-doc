@@ -28,26 +28,26 @@
 
 ## 🇫🇷 Français
 
-[[fr_Home|Accueil]]
+[[fr-Home|Accueil]]
 
 **Démarrage**
-- [[fr_Deploying-from-Marketplace|Déployer depuis le Marketplace]]
-- [[fr_SSH-Connection|Connexion SSH]]
-- [[fr_Post-Deployment-Verification|Vérification post-déploiement]]
+- [[fr-Deploying-from-Marketplace|Déployer depuis le Marketplace]]
+- [[fr-SSH-Connection|Connexion SSH]]
+- [[fr-Post-Deployment-Verification|Vérification post-déploiement]]
 
 **Configuration**
-- [[fr_HTTPS-TLS-Certificate|Certificat HTTPS / TLS]]
-- [[fr_Configuring-Nextcloud|Configurer Nextcloud]]
+- [[fr-HTTPS-TLS-Certificate|Certificat HTTPS / TLS]]
+- [[fr-Configuring-Nextcloud|Configurer Nextcloud]]
 
 **Administration**
-- [[fr_Updating-Nextcloud|Mettre à jour Nextcloud]]
-- [[fr_Managing-Users|Gérer les utilisateurs]]
-- [[fr_Managing-Apps|Gérer les applications]]
+- [[fr-Updating-Nextcloud|Mettre à jour Nextcloud]]
+- [[fr-Managing-Users|Gérer les utilisateurs]]
+- [[fr-Managing-Apps|Gérer les applications]]
 
 **Utiliser Nextcloud**
-- [[fr_Loading-Sample-Data|Chargement des données d'exemple]]
-- [[fr_Exploring-Nextcloud|Explorer Nextcloud]]
+- [[fr-Loading-Sample-Data|Chargement des données d'exemple]]
+- [[fr-Exploring-Nextcloud|Explorer Nextcloud]]
 
 **Aide**
-- [[fr_Troubleshooting|Dépannage]]
-- [[fr_Support|Support]]
+- [[fr-Troubleshooting|Dépannage]]
+- [[fr-Support|Support]]

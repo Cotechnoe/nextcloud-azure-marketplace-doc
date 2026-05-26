@@ -88,8 +88,8 @@ Une fois le déploiement terminé :
 
 | Étape suivante | Page |
 |----------------|------|
-| Se connecter en SSH | [[fr_SSH-Connection]] |
-| Pointer votre domaine vers la VM | [[fr_HTTPS-TLS-Certificate]] |
+| Se connecter en SSH | [[fr-SSH-Connection]] |
+| Pointer votre domaine vers la VM | [[fr-HTTPS-TLS-Certificate]] |
 
 ---
 
@@ -104,4 +104,4 @@ Annulez le déploiement, consultez le journal d'activité pour les détails de l
 
 **Le port SSH (22) est bloqué**  
 Vérifiez que le groupe de sécurité réseau autorise le port TCP entrant 22.
-Voir [[fr_SSH-Connection]] pour les détails.
+Voir [[fr-SSH-Connection]] pour les détails.

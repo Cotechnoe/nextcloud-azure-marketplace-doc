@@ -9,7 +9,7 @@ correctement avant de configurer Nextcloud.
 
 ## Prérequis
 
-- Vous êtes connecté à la VM via SSH (voir [[fr_SSH-Connection]]).
+- Vous êtes connecté à la VM via SSH (voir [[fr-SSH-Connection]]).
 
 ---
 
@@ -169,5 +169,5 @@ Vérifiez que Redis écoute sur `127.0.0.1:6379` :
 
 | Étape suivante | Page |
 |----------------|------|
-| Configurer HTTPS | [[fr_HTTPS-TLS-Certificate]] |
-| Finaliser la configuration de Nextcloud | [[fr_Configuring-Nextcloud]] |
+| Configurer HTTPS | [[fr-HTTPS-TLS-Certificate]] |
+| Finaliser la configuration de Nextcloud | [[fr-Configuring-Nextcloud]] |

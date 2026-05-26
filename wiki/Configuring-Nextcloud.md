@@ -1,6 +1,6 @@
 # Configuring Nextcloud
 
-> 🇫🇷 Cette page est également disponible en français : [[fr_Configuring-Nextcloud]]
+> 🇫🇷 Cette page est également disponible en français : [[fr-Configuring-Nextcloud]]
 
 This page walks you through the initial Nextcloud configuration after deployment,
 including the setup wizard and key post-installation settings.

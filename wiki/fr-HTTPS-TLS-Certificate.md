@@ -9,7 +9,7 @@ afin que votre instance Nextcloud soit accessible via HTTPS avec un certificat v
 
 ## Prérequis
 
-- Les quatre services (Nginx, PHP-FPM, MariaDB, Redis) sont en cours d'exécution — voir [[fr_Post-Deployment-Verification]].
+- Les quatre services (Nginx, PHP-FPM, MariaDB, Redis) sont en cours d'exécution — voir [[fr-Post-Deployment-Verification]].
 - Vous avez un **nom de domaine pleinement qualifié (FQDN)** (p. ex. `cloud.exemple.com`).
 - Votre VM possède une **adresse IP publique statique** (configurée lors du déploiement).
 - L'**enregistrement DNS A** de votre domaine pointe vers l'adresse IP statique de la VM.
@@ -147,4 +147,4 @@ Exécutez : `sudo systemctl reload nginx`
 
 | Étape suivante | Page |
 |----------------|------|
-| Finaliser la configuration initiale de Nextcloud | [[fr_Configuring-Nextcloud]] |
+| Finaliser la configuration initiale de Nextcloud | [[fr-Configuring-Nextcloud]] |

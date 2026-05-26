@@ -1,6 +1,6 @@
 # HTTPS / TLS Certificate
 
-> 🇫🇷 Cette page est également disponible en français : [[fr_HTTPS-TLS-Certificate]]
+> 🇫🇷 Cette page est également disponible en français : [[fr-HTTPS-TLS-Certificate]]
 
 This page explains how to obtain and configure a free TLS certificate using Certbot (Let's Encrypt)
 so that your Nextcloud instance is accessible over HTTPS with a valid certificate.

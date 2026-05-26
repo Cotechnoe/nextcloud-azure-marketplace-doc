@@ -9,8 +9,8 @@ y compris l'assistant de configuration et les paramètres clés post-installatio
 
 ## Prérequis
 
-- HTTPS est configuré et votre domaine se résout correctement — voir [[fr_HTTPS-TLS-Certificate]].
-- Les quatre services sont en cours d'exécution — voir [[fr_Post-Deployment-Verification]].
+- HTTPS est configuré et votre domaine se résout correctement — voir [[fr-HTTPS-TLS-Certificate]].
+- Les quatre services sont en cours d'exécution — voir [[fr-Post-Deployment-Verification]].
 
 ---
 
@@ -163,6 +163,6 @@ Testez PostgreSQL avec : `sudo -u postgres psql -U nextcloud -d nextcloud -c "\\
 
 | Étape suivante | Page |
 |----------------|------|
-| Découvrir les fonctionnalités de Nextcloud | [[fr_Exploring-Nextcloud]] |
-| Maintenir Nextcloud à jour | [[fr_Updating-Nextcloud]] |
-| Gérer les comptes utilisateurs | [[fr_Managing-Users]] |
+| Découvrir les fonctionnalités de Nextcloud | [[fr-Exploring-Nextcloud]] |
+| Maintenir Nextcloud à jour | [[fr-Updating-Nextcloud]] |
+| Gérer les comptes utilisateurs | [[fr-Managing-Users]] |

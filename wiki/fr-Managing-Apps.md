@@ -145,6 +145,6 @@ de recherche et d'entreprise :
 
 | Étape suivante | Page |
 |----------------|------|
-| Résoudre les problèmes | [[fr_Troubleshooting]] |
-| Obtenir de l'aide | [[fr_Support]] |
-| Mettre à jour le cœur Nextcloud | [[fr_Updating-Nextcloud]] |
+| Résoudre les problèmes | [[fr-Troubleshooting]] |
+| Obtenir de l'aide | [[fr-Support]] |
+| Mettre à jour le cœur Nextcloud | [[fr-Updating-Nextcloud]] |

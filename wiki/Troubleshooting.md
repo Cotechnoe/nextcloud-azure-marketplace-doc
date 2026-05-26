@@ -1,6 +1,6 @@
 # Troubleshooting
 
-> 🇫🇷 Cette page est également disponible en français : [[fr_Troubleshooting]]
+> 🇫🇷 Cette page est également disponible en français : [[fr-Troubleshooting]]
 
 This page covers the most common issues encountered with a Nextcloud Azure Marketplace
 deployment, along with diagnostic commands and solutions.

@@ -1,6 +1,6 @@
 # Managing Apps
 
-> 🇫🇷 Cette page est également disponible en français : [[fr_Managing-Apps]]
+> 🇫🇷 Cette page est également disponible en français : [[fr-Managing-Apps]]
 
 This page explains how to install, update, enable, disable, and remove apps in your
 Nextcloud deployment.

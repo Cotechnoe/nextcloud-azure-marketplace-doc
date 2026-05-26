@@ -9,7 +9,7 @@ le programme de mise à jour intégré et la commande `occ upgrade`.
 
 ## Prérequis
 
-- Vous êtes connecté à la VM via SSH — voir [[fr_SSH-Connection]].
+- Vous êtes connecté à la VM via SSH — voir [[fr-SSH-Connection]].
 - Vous avez effectué une sauvegarde avant de commencer — consultez le guide de sauvegarde pour les détails.
 
 > **Important :** Sauvegardez toujours vos données et votre base de données avant d'effectuer
@@ -149,6 +149,6 @@ ou attendez que le développeur de l'application publie une version compatible.
 
 | Étape suivante | Page |
 |----------------|------|
-| Gérer les applications installées | [[fr_Managing-Apps]] |
-| Gérer les comptes utilisateurs | [[fr_Managing-Users]] |
-| Résoudre les problèmes | [[fr_Troubleshooting]] |
+| Gérer les applications installées | [[fr-Managing-Apps]] |
+| Gérer les comptes utilisateurs | [[fr-Managing-Users]] |
+| Résoudre les problèmes | [[fr-Troubleshooting]] |
