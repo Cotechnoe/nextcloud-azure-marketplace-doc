@@ -3,22 +3,22 @@
 [[Home]]
 
 **Getting Started**
-- [[Deploying-from-Marketplace|Deploying from Marketplace]]
-- [[SSH-Connection|SSH Connection]]
-- [[Post-Deployment-Verification|Post-Deployment Verification]]
+- [[Deploying from Marketplace|Deploying-from-Marketplace]]
+- [[SSH Connection|SSH-Connection]]
+- [[Post-Deployment Verification|Post-Deployment-Verification]]
 
 **Configuration**
-- [[HTTPS-TLS-Certificate|HTTPS / TLS Certificate]]
-- [[Configuring-Nextcloud|Configuring Nextcloud]]
+- [[HTTPS / TLS Certificate|HTTPS-TLS-Certificate]]
+- [[Configuring Nextcloud|Configuring-Nextcloud]]
 
 **Administration**
-- [[Updating-Nextcloud|Updating Nextcloud]]
-- [[Managing-Users|Managing Users]]
-- [[Managing-Apps|Managing Apps]]
+- [[Updating Nextcloud|Updating-Nextcloud]]
+- [[Managing Users|Managing-Users]]
+- [[Managing Apps|Managing-Apps]]
 
 **Using Nextcloud**
-- [[Loading-Sample-Data|Loading Sample Data]]
-- [[Exploring-Nextcloud|Exploring Nextcloud]]
+- [[Loading Sample Data|Loading-Sample-Data]]
+- [[Exploring Nextcloud|Exploring-Nextcloud]]
 
 **Help**
 - [[Troubleshooting]]
@@ -28,26 +28,26 @@
 
 ## 🇫🇷 Français
 
-[[fr-Home|Accueil]]
+[[Accueil|fr-Home]]
 
 **Démarrage**
-- [[fr-Deploying-from-Marketplace|Déployer depuis le Marketplace]]
-- [[fr-SSH-Connection|Connexion SSH]]
-- [[fr-Post-Deployment-Verification|Vérification post-déploiement]]
+- [[Déployer depuis le Marketplace|fr-Deploying-from-Marketplace]]
+- [[Connexion SSH|fr-SSH-Connection]]
+- [[Vérification post-déploiement|fr-Post-Deployment-Verification]]
 
 **Configuration**
-- [[fr-HTTPS-TLS-Certificate|Certificat HTTPS / TLS]]
-- [[fr-Configuring-Nextcloud|Configurer Nextcloud]]
+- [[Certificat HTTPS / TLS|fr-HTTPS-TLS-Certificate]]
+- [[Configurer Nextcloud|fr-Configuring-Nextcloud]]
 
 **Administration**
-- [[fr-Updating-Nextcloud|Mettre à jour Nextcloud]]
-- [[fr-Managing-Users|Gérer les utilisateurs]]
-- [[fr-Managing-Apps|Gérer les applications]]
+- [[Mettre à jour Nextcloud|fr-Updating-Nextcloud]]
+- [[Gérer les utilisateurs|fr-Managing-Users]]
+- [[Gérer les applications|fr-Managing-Apps]]
 
 **Utiliser Nextcloud**
-- [[fr-Loading-Sample-Data|Chargement des données d'exemple]]
-- [[fr-Exploring-Nextcloud|Explorer Nextcloud]]
+- [[Chargement des données d'exemple|fr-Loading-Sample-Data]]
+- [[Explorer Nextcloud|fr-Exploring-Nextcloud]]
 
 **Aide**
-- [[fr-Troubleshooting|Dépannage]]
-- [[fr-Support|Support]]
+- [[Dépannage|fr-Troubleshooting]]
+- [[Support|fr-Support]]
