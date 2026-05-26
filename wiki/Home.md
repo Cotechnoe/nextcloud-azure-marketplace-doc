@@ -83,8 +83,8 @@ Select the **-fr** version of any page for the French translation.
 The Cotechnoe Cloud Hub VM runs the following services on a single Azure virtual machine:
 
 - **Nginx** — reverse proxy with TLS termination
-- **PHP-FPM 8.1+** — application runtime
-- **MariaDB** — database
+- **PHP-FPM 8.3** — application runtime
+- **PostgreSQL 16** — database
 - **Redis** — session cache and file locking
 - **Certbot** — automatic Let's Encrypt certificate management
 

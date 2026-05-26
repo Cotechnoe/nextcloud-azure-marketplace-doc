@@ -119,7 +119,7 @@ Also log in via the web interface and check **Settings > Overview** for any rema
 |-------|-----------------|
 | Version | `sudo -u www-data php /var/www/nextcloud/occ status` |
 | No warnings | Settings > Overview in browser |
-| All services active | `sudo systemctl is-active nginx php8.1-fpm mariadb redis-server` |
+| All services active | `sudo systemctl is-active nginx php8.3-fpm postgresql redis-server` |
 
 ---
 

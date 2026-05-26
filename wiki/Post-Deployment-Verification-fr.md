@@ -45,7 +45,7 @@ Attendu : `HTTP/1.1 200 OK` ou une redirection vers HTTPS.
 PHP-FPM traite les requêtes PHP pour Nextcloud.
 
 ```bash
-sudo systemctl status php8.1-fpm
+sudo systemctl status php8.3-fpm
 ```
 
 La sortie attendue contient `Active: active (running)`.
@@ -53,8 +53,8 @@ La sortie attendue contient `Active: active (running)`.
 Si PHP-FPM ne fonctionne pas, démarrez-le :
 
 ```bash
-sudo systemctl start php8.1-fpm
-sudo systemctl enable php8.1-fpm
+sudo systemctl start php8.3-fpm
+sudo systemctl enable php8.3-fpm
 ```
 
 **Vérifier la version de PHP :**
@@ -63,31 +63,31 @@ sudo systemctl enable php8.1-fpm
 php --version
 ```
 
-Attendu : PHP 8.1 ou supérieur.
+Attendu : PHP 8.3.
 
 ---
 
-## Étape 3 — Vérifier MariaDB
+## Étape 3 — Vérifier PostgreSQL
 
-MariaDB stocke la base de données Nextcloud.
+PostgreSQL stocke la base de données Nextcloud.
 
 ```bash
-sudo systemctl status mariadb
+sudo systemctl status postgresql
 ```
 
 La sortie attendue contient `Active: active (running)`.
 
-Si MariaDB ne fonctionne pas, démarrez-le :
+Si PostgreSQL ne fonctionne pas, démarrez-le :
 
 ```bash
-sudo systemctl start mariadb
-sudo systemctl enable mariadb
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
 ```
 
 **Tester la connectivité à la base de données :**
 
 ```bash
-sudo mysql -u root -e "SHOW DATABASES;"
+sudo -u postgres psql -c "\\l"
 ```
 
 Attendu : Un tableau listant les bases de données, dont `nextcloud` (si déjà configurée).
@@ -126,7 +126,7 @@ Attendu : `PONG`
 Exécutez toutes les vérifications en une seule commande :
 
 ```bash
-for svc in nginx php8.1-fpm mariadb redis-server; do
+for svc in nginx php8.3-fpm postgresql redis-server; do
   echo "=== $svc ===" && sudo systemctl is-active "$svc"
 done
 ```
@@ -140,8 +140,8 @@ Les quatre services doivent tous indiquer `active`.
 | Service | Commande de vérification | Résultat attendu |
 |---------|------------------------|-----------------|
 | Nginx | `sudo systemctl is-active nginx` | `active` |
-| PHP-FPM | `sudo systemctl is-active php8.1-fpm` | `active` |
-| MariaDB | `sudo systemctl is-active mariadb` | `active` |
+| PHP-FPM | `sudo systemctl is-active php8.3-fpm` | `active` |
+| PostgreSQL | `sudo systemctl is-active postgresql` | `active` |
 | Redis | `sudo systemctl is-active redis-server` | `active` |
 
 ---
@@ -153,11 +153,11 @@ Un autre processus utilise le port 80 ou 443. Trouvez-le avec `sudo ss -tlnp | g
 
 **PHP-FPM ne démarre pas : « No such file or directory »**  
 Le chemin du socket configuré dans Nginx peut ne pas correspondre à celui créé par PHP-FPM.
-Vérifiez la cohérence dans `/etc/nginx/sites-available/` et `/etc/php/8.1/fpm/pool.d/www.conf`.
+Vérifiez la cohérence dans `/etc/nginx/sites-available/` et `/etc/php/8.3/fpm/pool.d/www.conf`.
 
-**MariaDB ne démarre pas : « Can't open and lock privilege tables »**  
-Corruption du répertoire de données. Exécutez `sudo mysql_upgrade` ou consultez les journaux MariaDB :
-`sudo journalctl -u mariadb --since "5 minutes ago"`.
+**PostgreSQL ne démarre pas : « could not open file \"pg_filenode.map\" »**  
+Problème de répertoire de données. Consultez les journaux PostgreSQL :
+`sudo journalctl -u postgresql --since "5 minutes ago"`.
 
 **Redis : `redis-cli ping` retourne `Connection refused`**  
 Vérifiez que Redis écoute sur `127.0.0.1:6379` :

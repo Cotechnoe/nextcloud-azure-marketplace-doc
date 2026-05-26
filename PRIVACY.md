@@ -19,9 +19,9 @@ stored **exclusively within your Azure infrastructure**:
 
 | Data Type | Location | Purpose |
 |-----------|----------|---------|
-| Nextcloud user accounts (usernames, email, password hashes) | MariaDB on the VM `/var/lib/mysql` | Authentication & collaboration |
-| Uploaded files and shared data | VM data disk `/var/www/nextcloud/data` | User file storage |
-| Application logs (Nginx, PHP-FPM, Nextcloud) | `/var/log/nginx/`, `/var/log/php-fpm/`, `/var/www/nextcloud/data/nextcloud.log` | Diagnostics & troubleshooting |
+| Nextcloud user accounts (usernames, email, password hashes) | PostgreSQL 16 on the VM `/var/lib/postgresql/16/main` | Authentication & collaboration |
+| Uploaded files and shared data | VM data disk `/var/nextcloud-data` | User file storage |
+| Application logs (Nginx, PHP-FPM, Nextcloud) | `/var/log/nginx/`, `/var/log/php8.3-fpm.log`, `/var/log/nextcloud/nextcloud.log` | Diagnostics & troubleshooting |
 | Session data | Redis (in-memory, port 6379) | Performance & file locking |
 | TLS certificates | `/etc/letsencrypt/` | HTTPS communication |
 | SSH authentication logs | `/var/log/auth.log` | Security & access control |

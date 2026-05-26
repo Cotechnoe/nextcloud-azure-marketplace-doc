@@ -10,7 +10,7 @@ deployment, along with diagnostic commands and solutions.
 ## Prerequisites
 
 - You are connected to the VM via SSH — see [[SSH-Connection]].
-- All four services are expected to be running: Nginx, PHP-FPM 8.1, MariaDB, Redis.
+- All four services are expected to be running: Nginx, PHP-FPM 8.3, PostgreSQL 16, Redis.
 
 ---
 
@@ -73,23 +73,23 @@ sudo systemctl enable --now certbot.timer
 
 ## Issue 3 — Database Connection Lost
 
-**Symptoms:** Nextcloud shows "Error while trying to create admin user: Failed to connect to the database" or "Can't connect to local MySQL server through socket".
+**Symptoms:** Nextcloud shows "Error while trying to create admin user: Failed to connect to the database" or "could not connect to server: Connection refused".
 
 **Diagnosis:**
 
 ```bash
-sudo systemctl status mariadb
-sudo journalctl -u mariadb --since "1 hour ago" | tail -30
+sudo systemctl status postgresql
+sudo journalctl -u postgresql --since "1 hour ago" | tail -30
 ```
 
 **Solutions:**
 
-1. Start or restart MariaDB: `sudo systemctl restart mariadb`
-2. Check disk space — MariaDB can fail if the disk is full:
+1. Start or restart PostgreSQL: `sudo systemctl restart postgresql`
+2. Check disk space — PostgreSQL can fail if the disk is full:
    ```bash
    df -h /
    ```
-3. Check MariaDB error log: `sudo tail -50 /var/log/mysql/error.log`
+3. Check PostgreSQL log: `sudo journalctl -u postgresql --since "1 hour ago" | tail -50`
 
 ---
 
@@ -100,16 +100,16 @@ sudo journalctl -u mariadb --since "1 hour ago" | tail -30
 **Diagnosis:**
 
 ```bash
-sudo systemctl status php8.1-fpm
-sudo journalctl -u php8.1-fpm --since "30 minutes ago" | tail -20
+sudo systemctl status php8.3-fpm
+sudo journalctl -u php8.3-fpm --since "30 minutes ago" | tail -20
 ```
 
 **Solutions:**
 
-1. Restart PHP-FPM: `sudo systemctl restart php8.1-fpm`
-2. Check PHP error log: `sudo tail -50 /var/log/php8.1-fpm.log`
+1. Restart PHP-FPM: `sudo systemctl restart php8.3-fpm`
+2. Check PHP error log: `sudo tail -50 /var/log/php8.3-fpm.log`
 3. Increase memory limit if processes are killed by OOM (Out of Memory):
-   Edit `/etc/php/8.1/fpm/php.ini` → `memory_limit = 512M`, then restart PHP-FPM.
+   Edit `/etc/php/8.3/fpm/php.ini` → `memory_limit = 512M`, then restart PHP-FPM.
 
 ---
 
@@ -141,11 +141,11 @@ Expected response from `redis-cli ping`: `PONG`
 
 ```bash
 # Check all four services at once
-sudo systemctl is-active nginx php8.1-fpm mariadb redis-server
+sudo systemctl is-active nginx php8.3-fpm postgresql redis-server
 
 # View Nextcloud application log (last 50 lines)
-sudo tail -50 /var/www/nextcloud/data/nextcloud.log | python3 -m json.tool 2>/dev/null || \
-  sudo tail -50 /var/www/nextcloud/data/nextcloud.log
+sudo tail -50 /var/log/nextcloud/nextcloud.log | python3 -m json.tool 2>/dev/null || \
+  sudo tail -50 /var/log/nextcloud/nextcloud.log
 
 # Check disk space
 df -h

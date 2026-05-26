@@ -117,7 +117,7 @@ enabled  = true
 port     = http,https
 filter   = nextcloud
 logpath  = /var/log/nginx/access.log
-           /var/www/nextcloud/data/nextcloud.log
+           /var/log/nextcloud/nextcloud.log
 maxretry = 10
 bantime  = 3600
 findtime = 600

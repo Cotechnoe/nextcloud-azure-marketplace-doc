@@ -75,7 +75,7 @@ Tapez `yes` et appuyez sur Entrée. L'empreinte est enregistrée dans `~/.ssh/kn
 Après la connexion, vous devriez voir un message de bienvenue et une invite de commande :
 
 ```
-Welcome to Ubuntu 22.04.x LTS (GNU/Linux ...)
+Welcome to Ubuntu 24.04.x LTS (GNU/Linux ...)
 ...
 azureuser@nextcloud-prod:~$
 ```

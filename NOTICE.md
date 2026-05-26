@@ -24,10 +24,10 @@ This product is not affiliated with, sponsored by, or endorsed by Nextcloud GmbH
 Nginx is distributed under the [BSD 2-Clause License](https://nginx.org/LICENSE).  
 Copyright © 2002–2026 Igor Sysoev, Nginx, Inc.
 
-### MariaDB
+### PostgreSQL
 
-MariaDB Server is distributed under the [GNU General Public License, version 2 (GPL-2.0)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html).  
-MariaDB is a trademark of MariaDB Corporation Ab.
+PostgreSQL is distributed under the [PostgreSQL License](https://www.postgresql.org/about/licence/), a liberal open-source license similar to BSD/MIT.  
+Copyright © 1996–2026 The PostgreSQL Global Development Group.
 
 ### Redis
 

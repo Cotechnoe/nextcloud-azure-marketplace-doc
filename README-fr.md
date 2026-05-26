@@ -50,8 +50,8 @@ La VM **Cotechnoe Cloud Hub** déploie une plateforme de collaboration entièrem
 | Service | Rôle |
 |---------|------|
 | **Nginx** | Proxy inverse + terminaison TLS |
-| **PHP-FPM 8.1+** | Environnement d'exécution de l'application |
-| **MariaDB** | Base de données intégrée |
+| **PHP-FPM 8.3** | Environnement d'exécution de l'application |
+| **PostgreSQL 16** | Base de données intégrée |
 | **Redis** | Cache de sessions et verrouillage des fichiers |
 | **Certbot** | Gestion automatique des certificats Let's Encrypt |
 

@@ -34,7 +34,7 @@ to a user's data directory:
 ```bash
 # Replace "admin" with the actual Nextcloud username
 NEXTCLOUD_USER="admin"
-DATA_DIR="/var/www/nextcloud/data/${NEXTCLOUD_USER}/files"
+DATA_DIR="/var/nextcloud-data/${NEXTCLOUD_USER}/files"
 
 # Create a sample directory
 sudo mkdir -p "${DATA_DIR}/Sample Documents"

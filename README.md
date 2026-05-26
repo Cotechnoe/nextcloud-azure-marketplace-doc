@@ -48,8 +48,8 @@ The **Cotechnoe Cloud Hub** VM deploys a fully configured, self-hosted collabora
 | Service | Role |
 |---------|------|
 | **Nginx** | Reverse proxy + TLS termination |
-| **PHP-FPM 8.1+** | Application runtime |
-| **MariaDB** | Integrated database |
+| **PHP-FPM 8.3** | Application runtime |
+| **PostgreSQL 16** | Integrated database |
 | **Redis** | Session cache & file locking |
 | **Certbot** | Automatic Let's Encrypt certificate management |
 

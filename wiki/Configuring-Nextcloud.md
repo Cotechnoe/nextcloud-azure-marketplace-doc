@@ -37,7 +37,7 @@ Fill in the following fields:
 
 ### Data Folder
 
-The default data folder is `/var/www/nextcloud/data`.  
+The default data folder is `/var/nextcloud-data`.  
 If you attached a separate data disk during deployment, change this to the mount point of that disk
 (e.g. `/mnt/data/nextcloud`).
 
@@ -45,11 +45,11 @@ If you attached a separate data disk during deployment, change this to the mount
 
 | Field | Value |
 |-------|-------|
-| **Database type** | MySQL/MariaDB |
+| **Database type** | PostgreSQL |
 | **Database user** | `nextcloud` (pre-configured) |
 | **Database password** | See `/root/nextcloud-db-password.txt` or the deployment output |
 | **Database name** | `nextcloud` |
-| **Database host** | `localhost` |
+| **Database host** | `127.0.0.1:5432` |
 
 Click **Finish setup**.
 
@@ -61,14 +61,14 @@ If you prefer to configure Nextcloud without the web wizard, use the `occ` CLI:
 
 ```bash
 sudo -u www-data php /var/www/nextcloud/occ maintenance:install \
-  --database "mysql" \
-  --database-host "localhost" \
+  --database "pgsql" \
+  --database-host "127.0.0.1:5432" \
   --database-name "nextcloud" \
   --database-user "nextcloud" \
   --database-pass "YOUR_DB_PASSWORD" \
   --admin-user "YOUR_ADMIN_USER" \
   --admin-pass "YOUR_ADMIN_PASSWORD" \
-  --data-dir "/var/www/nextcloud/data"
+  --data-dir "/var/nextcloud-data"
 ```
 
 > Replace `YOUR_DB_PASSWORD`, `YOUR_ADMIN_USER`, and `YOUR_ADMIN_PASSWORD` with your actual values.
@@ -146,14 +146,14 @@ echo "*/5 * * * * php /var/www/nextcloud/occ background:job" | sudo crontab -u w
 
 **"Your data directory is invalid" warning**  
 The data directory path in `config.php` does not exist or has incorrect ownership.
-Set correct ownership: `sudo chown -R www-data:www-data /var/www/nextcloud/data`
+Set correct ownership: `sudo chown -R www-data:www-data /var/nextcloud-data`
 
 **"Maintenance mode is active"**  
 Turn off maintenance mode: `sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --off`
 
 **Setup Wizard shows database connection error**  
-Verify MariaDB is running and the database credentials are correct.
-Check MariaDB with: `sudo mysql -u nextcloud -p -e "USE nextcloud;"`
+Verify PostgreSQL is running and the database credentials are correct.
+Check PostgreSQL with: `sudo -u postgres psql -U nextcloud -d nextcloud -c "\\conninfo"`
 
 ---
 

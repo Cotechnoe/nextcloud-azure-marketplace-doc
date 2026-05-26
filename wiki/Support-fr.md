@@ -59,7 +59,7 @@ la résolution de votre problème :
 ## Environnement
 - Version Nextcloud : (exécutez `sudo -u www-data php /var/www/nextcloud/occ status`)
 - SKU de la VM : (p. ex. Standard_B2s)
-- Système d'exploitation : Ubuntu 22.04 LTS
+- Système d'exploitation : Ubuntu 24.04 LTS
 - Date de déploiement : AAAA-MM-JJ
 
 ## Description du problème

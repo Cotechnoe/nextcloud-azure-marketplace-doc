@@ -212,7 +212,7 @@ Résultats consultables dans l'[Insights workspace](https://partner.microsoft.co
                            │
 ┌──────────────────────────▼──────────────────────────────────────────┐
 │  ÉTAPE 2 : Construire l'image VM  [build repo]                      │
-│  ├── OS de base : image endorsée Azure (Ubuntu 22.04 LTS ✅)        │
+│  ├── OS de base : image endorsée Azure (Ubuntu 24.04 LTS ✅)        │
 │  ├── Installer le logiciel applicatif (Nextcloud + Nginx + MariaDB) │
 │  ├── Généraliser : waagent -deprovision+user (Linux)                │
 │  ├── Capturer dans Azure Compute Gallery (versionnée)               │

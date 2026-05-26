@@ -57,7 +57,7 @@ your problem faster:
 ## Environment
 - Nextcloud version: (run `sudo -u www-data php /var/www/nextcloud/occ status`)
 - VM SKU: (e.g. Standard_B2s)
-- OS: Ubuntu 22.04 LTS
+- OS: Ubuntu 24.04 LTS
 - Deployment date: YYYY-MM-DD
 
 ## Problem Description

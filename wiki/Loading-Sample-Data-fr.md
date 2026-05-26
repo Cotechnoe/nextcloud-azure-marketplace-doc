@@ -35,7 +35,7 @@ connectez-vous à la VM via SSH et copiez des fichiers dans le répertoire de do
 ```bash
 # Remplacez "admin" par le nom d'utilisateur Nextcloud réel
 NEXTCLOUD_USER="admin"
-DATA_DIR="/var/www/nextcloud/data/${NEXTCLOUD_USER}/files"
+DATA_DIR="/var/nextcloud-data/${NEXTCLOUD_USER}/files"
 
 # Créer un répertoire de démonstration
 sudo mkdir -p "${DATA_DIR}/Documents de démonstration"

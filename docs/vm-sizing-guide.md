@@ -28,7 +28,7 @@ based on the number of concurrent users and expected workload.
 ### OS Disk
 
 The OS disk (default 30 GB for this marketplace image) contains:
-- Ubuntu 22.04 LTS
+- Ubuntu 24.04 LTS
 - Nginx, PHP-FPM, MariaDB, Redis
 - Nextcloud application files (`/var/www/nextcloud/`)
 
@@ -67,7 +67,7 @@ echo "UUID=${DISK_UUID}  /mnt/nextcloud-data  ext4  defaults  0  2" | sudo tee -
 
 # Move Nextcloud data directory to the new disk
 sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --on
-sudo rsync -av /var/www/nextcloud/data/ /mnt/nextcloud-data/
+sudo rsync -av /var/nextcloud-data/ /mnt/nextcloud-data/
 sudo chown -R www-data:www-data /mnt/nextcloud-data
 
 # Update config.php

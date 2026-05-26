@@ -75,7 +75,7 @@ Type `yes` and press Enter. The fingerprint is saved to `~/.ssh/known_hosts`.
 After connecting, you should see a welcome message and a shell prompt:
 
 ```
-Welcome to Ubuntu 22.04.x LTS (GNU/Linux ...)
+Welcome to Ubuntu 24.04.x LTS (GNU/Linux ...)
 ...
 azureuser@nextcloud-prod:~$
 ```

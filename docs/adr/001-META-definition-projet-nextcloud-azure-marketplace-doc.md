@@ -121,7 +121,7 @@ Ces utilisateurs :
 | **Éditeur Marketplace** | Cotechnoe |
 | **Type d'offre** | Azure Virtual Machine |
 | **Logiciel embarqué** | Nextcloud Hub (dernière version stable) |
-| **OS** | Ubuntu 22.04 LTS |
+| **OS** | Ubuntu 24.04 LTS |
 | **Stack** | Nginx + PHP-FPM + MariaDB 10.6+ + Redis (optionnel) |
 | **Modèle de licence** | BYOS (Bring Your Own Subscription) — image gratuite |
 | **Segments cibles** | Universités, centres de recherche, organismes publics, PME |

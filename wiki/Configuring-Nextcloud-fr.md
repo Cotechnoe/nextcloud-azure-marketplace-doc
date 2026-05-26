@@ -37,7 +37,7 @@ Remplissez les champs suivants :
 
 ### Dossier de données
 
-Le dossier de données par défaut est `/var/www/nextcloud/data`.  
+Le dossier de données par défaut est `/var/nextcloud-data`.  
 Si vous avez attaché un disque de données séparé lors du déploiement, modifiez ce chemin
 vers le point de montage de ce disque (p. ex. `/mnt/data/nextcloud`).
 
@@ -45,11 +45,11 @@ vers le point de montage de ce disque (p. ex. `/mnt/data/nextcloud`).
 
 | Champ | Valeur |
 |-------|--------|
-| **Type de base de données** | MySQL/MariaDB |
+| **Type de base de données** | PostgreSQL |
 | **Utilisateur de la base de données** | `nextcloud` (préconfiguré) |
 | **Mot de passe de la base de données** | Voir `/root/nextcloud-db-password.txt` ou la sortie du déploiement |
 | **Nom de la base de données** | `nextcloud` |
-| **Hôte de la base de données** | `localhost` |
+| **Hôte de la base de données** | `127.0.0.1:5432` |
 
 Cliquez sur **Terminer la configuration**.
 
@@ -61,14 +61,14 @@ Si vous préférez configurer Nextcloud sans l'assistant web, utilisez l'interfa
 
 ```bash
 sudo -u www-data php /var/www/nextcloud/occ maintenance:install \
-  --database "mysql" \
-  --database-host "localhost" \
+  --database "pgsql" \
+  --database-host "127.0.0.1:5432" \
   --database-name "nextcloud" \
   --database-user "nextcloud" \
   --database-pass "VOTRE_MOT_DE_PASSE_DB" \
   --admin-user "VOTRE_UTILISATEUR_ADMIN" \
   --admin-pass "VOTRE_MOT_DE_PASSE_ADMIN" \
-  --data-dir "/var/www/nextcloud/data"
+  --data-dir "/var/nextcloud-data"
 ```
 
 > Remplacez `VOTRE_MOT_DE_PASSE_DB`, `VOTRE_UTILISATEUR_ADMIN` et `VOTRE_MOT_DE_PASSE_ADMIN`
@@ -148,14 +148,14 @@ echo "*/5 * * * * php /var/www/nextcloud/occ background:job" | sudo crontab -u w
 
 **Avertissement « Votre répertoire de données n'est pas valide »**  
 Le chemin du répertoire de données dans `config.php` n'existe pas ou a des permissions incorrectes.
-Définissez les permissions correctes : `sudo chown -R www-data:www-data /var/www/nextcloud/data`
+Définissez les permissions correctes : `sudo chown -R www-data:www-data /var/nextcloud-data`
 
-**« Le mode maintenance est actif »**  
+**« Le mode maintenance est actif »**  
 Désactivez le mode maintenance : `sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --off`
 
 **L'assistant de configuration affiche une erreur de connexion à la base de données**  
-Vérifiez que MariaDB est en cours d'exécution et que les identifiants de la base de données sont corrects.
-Testez MariaDB avec : `sudo mysql -u nextcloud -p -e "USE nextcloud;"`
+Vérifiez que PostgreSQL est en cours d'exécution et que les identifiants de la base de données sont corrects.
+Testez PostgreSQL avec : `sudo -u postgres psql -U nextcloud -d nextcloud -c "\\conninfo"`
 
 ---
 

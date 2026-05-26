@@ -120,7 +120,7 @@ pour les avertissements restants.
 |-------------|------------------|
 | Version | `sudo -u www-data php /var/www/nextcloud/occ status` |
 | Aucun avertissement | Paramètres > Vue d'ensemble dans le navigateur |
-| Tous les services actifs | `sudo systemctl is-active nginx php8.1-fpm mariadb redis-server` |
+| Tous les services actifs | `sudo systemctl is-active nginx php8.3-fpm postgresql redis-server` |
 
 ---
 

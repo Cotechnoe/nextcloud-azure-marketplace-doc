@@ -28,10 +28,10 @@ sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --off
 
 | Component | Path / Method | Description |
 |-----------|---------------|-------------|
-| User data | `/var/www/nextcloud/data/` (or custom data dir) | All user files |
+| User data | `/var/nextcloud-data/` (or custom data dir) | All user files |
 | Application | `/var/www/nextcloud/` | Nextcloud PHP files, apps, themes |
 | Configuration | `/var/www/nextcloud/config/config.php` | Database credentials, domain config |
-| Database | `mysqldump` | All Nextcloud tables |
+| Database | `pg_dump` | All Nextcloud tables |
 
 ---
 
@@ -49,7 +49,7 @@ sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --on
 BACKUP_DIR="/mnt/backup/nextcloud-$(date +%Y%m%d)"
 sudo mkdir -p "$BACKUP_DIR"
 
-sudo rsync -av /var/www/nextcloud/data/ "$BACKUP_DIR/data/"
+sudo rsync -av /var/nextcloud-data/ "$BACKUP_DIR/data/"
 ```
 
 ### Step 3 — Backup Application and Config
@@ -61,19 +61,13 @@ sudo rsync -av \
   /var/www/nextcloud/ "$BACKUP_DIR/app/"
 ```
 
-### Step 4 — Backup MariaDB Database
+### Step 4 — Backup PostgreSQL Database
 
 ```bash
-# Get database credentials from config.php
 DB_NAME=$(sudo grep "dbname" /var/www/nextcloud/config/config.php | \
   sed "s/.*=> '\(.*\)',/\1/")
-DB_USER=$(sudo grep "dbuser" /var/www/nextcloud/config/config.php | \
-  sed "s/.*=> '\(.*\)',/\1/")
-DB_PASS=$(sudo grep "dbpassword" /var/www/nextcloud/config/config.php | \
-  sed "s/.*=> '\(.*\)',/\1/")
 
-sudo mysqldump --single-transaction \
-  -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" \
+sudo -u postgres pg_dump "$DB_NAME" \
   > "$BACKUP_DIR/nextcloud-db.sql"
 ```
 
@@ -99,8 +93,8 @@ sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --on
 BACKUP_DIR="/mnt/backup/nextcloud-20240101"  # replace with your backup date
 
 sudo rsync -av --delete \
-  "$BACKUP_DIR/data/" /var/www/nextcloud/data/
-sudo chown -R www-data:www-data /var/www/nextcloud/data/
+  "$BACKUP_DIR/data/" /var/nextcloud-data/
+sudo chown -R www-data:www-data /var/nextcloud-data/
 ```
 
 ### Step 3 — Restore Application Files
@@ -111,17 +105,13 @@ sudo rsync -av --delete \
 sudo chown -R www-data:www-data /var/www/nextcloud/
 ```
 
-### Step 4 — Restore MariaDB Database
+### Step 4 — Restore PostgreSQL Database
 
 ```bash
 DB_NAME=$(sudo grep "dbname" /var/www/nextcloud/config/config.php | \
   sed "s/.*=> '\(.*\)',/\1/")
-DB_USER=$(sudo grep "dbuser" /var/www/nextcloud/config/config.php | \
-  sed "s/.*=> '\(.*\)',/\1/")
-DB_PASS=$(sudo grep "dbpassword" /var/www/nextcloud/config/config.php | \
-  sed "s/.*=> '\(.*\)',/\1/")
 
-sudo mysql -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" \
+sudo -u postgres psql "$DB_NAME" \
   < "$BACKUP_DIR/nextcloud-db.sql"
 ```
 
@@ -146,7 +136,7 @@ For automated backups with retention policies, use **Azure Backup**:
 5. Configure a daily backup schedule with appropriate retention (e.g., 30 days daily, 12 weeks weekly).
 
 > **Limitation:** Azure VM backups create crash-consistent snapshots.
-> For application-consistent backups of the database, use the `mysqldump` method above
+> For application-consistent backups of the database, use the `pg_dump` method above
 > combined with Azure Blob Storage upload.
 
 ### Upload Backup to Azure Blob Storage

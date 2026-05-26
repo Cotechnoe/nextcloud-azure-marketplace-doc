@@ -81,8 +81,8 @@ Toutes les pages sont disponibles en anglais (version canonique) et en français
 La VM Cotechnoe Cloud Hub exécute les services suivants sur une seule machine virtuelle Azure :
 
 - **Nginx** — proxy inverse avec terminaison TLS
-- **PHP-FPM 8.1+** — environnement d'exécution de l'application
-- **MariaDB** — base de données
+- **PHP-FPM 8.3** — environnement d'exécution de l'application
+- **PostgreSQL 16** — base de données
 - **Redis** — cache de sessions et verrouillage des fichiers
 - **Certbot** — gestion automatique des certificats Let's Encrypt
 

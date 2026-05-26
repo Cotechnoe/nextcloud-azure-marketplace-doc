@@ -93,7 +93,7 @@ sudo tail -f /var/log/mysql/mariadb-slow.log
 ### Journal d'application Nextcloud
 
 ```bash
-sudo tail -f /var/www/nextcloud/data/nextcloud.log | python3 -m json.tool
+sudo tail -f /var/log/nextcloud/nextcloud.log | python3 -m json.tool
 ```
 
 Définir le niveau de journalisation (0=DEBUG, 1=INFO, 2=WARN, 3=ERROR, 4=FATAL) :
