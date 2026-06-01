@@ -63,6 +63,42 @@ In the Azure portal **Create a virtual machine** wizard, fill in the following t
 
 - Enable **Auto-shutdown** if this is a non-production deployment to control costs.
 
+### Advanced
+
+> **⚠️ This step is required.** The VM runs a one-time first-boot setup that reads credentials written by cloud-init. If the **Custom data** field is left empty, the `nextcloud-first-boot` service will fail and Nextcloud will not be installed.
+
+In the **Custom data** field, paste the following cloud-init configuration and replace all placeholder values with your own:
+
+```yaml
+#cloud-config
+write_files:
+  - path: /etc/nextcloud/config.env
+    owner: root:root
+    permissions: "0600"
+    content: |
+      NC_ADMIN_USER=ncadmin
+      NC_ADMIN_PASSWORD=YourStrongPassword123!
+      NC_DB_PASSWORD=AnotherStrongPassword456!
+      REDIS_PASSWORD=RedisPassword789!
+```
+
+| Variable | Description | Requirements |
+|----------|-------------|--------------|
+| `NC_ADMIN_USER` | Nextcloud web administrator username | Alphanumeric, no spaces |
+| `NC_ADMIN_PASSWORD` | Nextcloud web administrator password | Min. 12 characters |
+| `NC_DB_PASSWORD` | PostgreSQL password for the `nextcloud` database user | Min. 12 characters |
+| `REDIS_PASSWORD` | Redis authentication password | Min. 12 characters |
+
+> **Notes:**
+> - The `#cloud-config` header on the **first line** is mandatory — do not omit it.
+> - `NC_ADMIN_USER` / `NC_ADMIN_PASSWORD` are your **Nextcloud** web admin credentials, not the Azure VM SSH user.
+> - `config.env` is automatically shredded by `nc-first-boot.sh` once first-boot completes — it does not persist on the VM.
+> - The first-boot service starts automatically after cloud-init writes this file — no manual action is required.
+
+### Tags
+
+Add any resource tags required by your organization (optional).
+
 ---
 
 ## Step 3 — Review and Create

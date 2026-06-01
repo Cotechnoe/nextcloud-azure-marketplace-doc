@@ -63,6 +63,42 @@ Dans l'assistant **Créer une machine virtuelle** du portail Azure, remplissez l
 
 - Activez **Arrêt automatique** si ce déploiement n'est pas en production, pour contrôler les coûts.
 
+### Avancé (Advanced)
+
+> **⚠️ Cette étape est obligatoire.** La VM exécute une configuration initiale (first-boot) qui lit les identifiants écrits par cloud-init. Si le champ **Données personnalisées (Custom data)** est laissé vide, le service `nextcloud-first-boot` échouera et Nextcloud ne sera pas installé.
+
+Dans le champ **Données personnalisées (Custom data)**, collez la configuration cloud-init suivante et remplacez toutes les valeurs par les vôtres :
+
+```yaml
+#cloud-config
+write_files:
+  - path: /etc/nextcloud/config.env
+    owner: root:root
+    permissions: "0600"
+    content: |
+      NC_ADMIN_USER=ncadmin
+      NC_ADMIN_PASSWORD=VotreMotDePasse123!
+      NC_DB_PASSWORD=AutreMotDePasse456!
+      REDIS_PASSWORD=MotDePasseRedis789!
+```
+
+| Variable | Description | Contraintes |
+|----------|-------------|-------------|
+| `NC_ADMIN_USER` | Nom d'utilisateur administrateur Nextcloud | Alphanumérique, sans espace |
+| `NC_ADMIN_PASSWORD` | Mot de passe administrateur Nextcloud | Min. 12 caractères |
+| `NC_DB_PASSWORD` | Mot de passe PostgreSQL pour l'utilisateur `nextcloud` | Min. 12 caractères |
+| `REDIS_PASSWORD` | Mot de passe d'authentification Redis | Min. 12 caractères |
+
+> **Notes :**
+> - L'en-tête `#cloud-config` sur la **première ligne** est obligatoire — ne l'omettez pas.
+> - `NC_ADMIN_USER` / `NC_ADMIN_PASSWORD` sont vos identifiants d'administration **Nextcloud**, pas l'utilisateur SSH de la VM Azure.
+> - Le fichier `config.env` est automatiquement détruit (`shred -u`) par `nc-first-boot.sh` après le premier démarrage — il ne persiste pas sur la VM.
+> - Le service first-boot démarre automatiquement après que cloud-init a écrit ce fichier — aucune action manuelle n'est nécessaire.
+
+### Étiquettes (Tags)
+
+Ajoutez les étiquettes de ressources requises par votre organisation (facultatif).
+
 ---
 
 ## Étape 3 — Vérifier et créer
