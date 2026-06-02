@@ -9,14 +9,14 @@
 
 ```
 After deployment:
-1. SSH: ssh azureuser@<public-ip>
-2. Configure DNS: point your domain to <public-ip>
-3. Run: sudo /opt/cotechnoe/setup.sh
-4. Access: https://your-domain
-Full docs: https://github.com/Cotechnoe/nextcloud-azure-marketplace-doc/wiki
+1. Wait 10-15 min for automatic setup (cloud-init)
+2. Configure DNS: point your domain to VM public IP
+3. Setup TLS certificate (SSH to VM, see wiki docs)
+4. Access Nextcloud at https://your-domain
+Full guide: https://github.com/Cotechnoe/nextcloud-azure-marketplace-doc/wiki
 ```
 
-**Character count:** 228 / 500 ✅
+**Character count:** 257 / 500 ✅
 
 ---
 
@@ -24,14 +24,14 @@ Full docs: https://github.com/Cotechnoe/nextcloud-azure-marketplace-doc/wiki
 
 ```
 Après déploiement :
-1. SSH : ssh azureuser@<ip-publique>
-2. DNS : pointez votre domaine vers <ip-publique>
-3. Exécutez : sudo /opt/cotechnoe/setup.sh
-4. Accès : https://votre-domaine
-Documentation : https://github.com/Cotechnoe/nextcloud-azure-marketplace-doc/wiki
+1. Attendre 10-15 min pour la configuration automatique (cloud-init)
+2. DNS : pointez votre domaine vers l'IP publique de la VM
+3. Configurer le certificat TLS (SSH vers la VM, voir wiki)
+4. Accéder à Nextcloud : https://votre-domaine
+Guide complet : https://github.com/Cotechnoe/nextcloud-azure-marketplace-doc/wiki
 ```
 
-**Nombre de caractères :** 232 / 500 ✅
+**Nombre de caractères :** 298 / 500 ✅
 
 ---
 
